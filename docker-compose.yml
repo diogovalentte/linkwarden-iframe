@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  linkwarden-iframe:
+    container_name: linkwarden-iframe
+    image: ghcr.io/diogovalentte/linkwarden-iframe:latest
+    user: 1000:1000
+    ports:
+      - 8080:8080
+    restart: on-failure
