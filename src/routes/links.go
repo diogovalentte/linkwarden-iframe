@@ -116,19 +116,20 @@ func getLinksiFrame(links []*models.Link, theme string) ([]byte, error) {
     <style>
         body {
             background-color: LINKS-CONTAINER-BACKGROUND-COLOR;
+            margin: 0;
+            padding: 0;
         }
 
         .links-container {
             width: calc(100% - LINKS-CONTAINER-WIDTHpx);
             height: 84px;
-            border: 1px solid #ccc;
-            padding: 5px;
-            display: flex;
-            align-items: center;
 
             position: relative;
+            display: flex;
+            align-items: center;
             justify-content: space-between;
             margin-bottom: 14px;
+
             border-radius: 10px;
             border: 1px solid rgba(56, 58, 64, 1);
         }
