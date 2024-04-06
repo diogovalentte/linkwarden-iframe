@@ -17,7 +17,7 @@ import (
 // LinksRoutes registers the links routes
 func LinksRoutes(group *gin.RouterGroup) {
 	group.GET("/links", GetLinks)
-	group.GET("/links/html", GetLinksHTML)
+	group.GET("/links/iframe", GetLinksHTML)
 }
 
 // GetLinks returns all links
