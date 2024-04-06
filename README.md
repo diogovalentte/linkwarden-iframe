@@ -14,7 +14,7 @@ This is how the iFrame is shown on the dashboard (on the right in the image belo
 1. Run the latest version:
 
 ```sh
-docker run --name linkwarden-iframe -p 8080:8080 ghcr.io/diogovalentte/linkwarden-iframe:latest
+docker run --name linkwarden-iframe -p 8080:8080 -e LINKWARDEN_ADDRESS=https://sub.domain.com -e LINKWARDEN_TOKEN=linkwarden-token ghcr.io/diogovalentte/linkwarden-iframe:latest
 ```
 
 ## Using Docker Compose:
