@@ -4,8 +4,7 @@ A very simple and limited API that gets your links from your [Linkwarden](https:
 
 This is how the iFrame is shown on the dashboard (on the right in the image below). It is made based on the Homarr app to show movies/show requests on Jellyseer/Overseer (on the left):
 
-![image](https://github.com/diogovalentte/linkwarden-iframe/assets/49578155/5dc10452-e20e-402a-9d43-6fe47e02423b)
-
+![image](https://github.com/diogovalentte/linkwarden-iframe/assets/49578155/90cddcc1-7fca-4ea2-9f0e-6418209ddb80)
 
 # How to run:
 
