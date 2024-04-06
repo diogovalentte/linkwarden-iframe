@@ -5,6 +5,9 @@ services:
     container_name: linkwarden-iframe
     image: ghcr.io/diogovalentte/linkwarden-iframe:latest
     user: 1000:1000
+    environment:
+      - LINKWARDEN_ADDRESS=${LINKWARDEN_ADDRESS}
+      - LINKWARDEN_TOKEN=${LINKWARDEN_TOKEN}
     ports:
       - 8080:8080
     restart: on-failure
