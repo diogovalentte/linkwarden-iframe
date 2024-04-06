@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+	"strconv"
 	"strings"
 
 	"github.com/gin-gonic/gin"
@@ -29,8 +30,20 @@ func GetLinks(c *gin.Context) {
 		url = config.LinkwardenAddress + "/api/v1/links"
 	}
 
+	queryLimit := c.Query("limit")
+	var limit int
+	var err error
+	if queryLimit == "" {
+		limit = -1
+	} else {
+		limit, err = strconv.Atoi(queryLimit)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "limit must be a number"})
+		}
+	}
+
 	links := map[string][]*models.Link{}
-	err := baseRequest(url, &links)
+	err = baseRequest(url, &links)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, fmt.Errorf("Error while doing API request: %s", err.Error()))
 		return
@@ -40,6 +53,10 @@ func GetLinks(c *gin.Context) {
 	if !exists {
 		c.JSON(http.StatusInternalServerError, fmt.Errorf("No 'reponse' field in API response"))
 		return
+	}
+
+	if limit >= 0 {
+		res = res[:limit]
 	}
 
 	c.JSON(http.StatusOK, gin.H{"reponse": res})
@@ -55,6 +72,18 @@ func GetLinksHTML(c *gin.Context) {
 		return
 	}
 
+	queryLimit := c.Query("limit")
+	var limit int
+	var err error
+	if queryLimit == "" {
+		limit = -1
+	} else {
+		limit, err = strconv.Atoi(queryLimit)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "limit must be a number"})
+		}
+	}
+
 	collectionID := c.Query("collectionId")
 	var url string
 	if collectionID != "" {
@@ -64,7 +93,7 @@ func GetLinksHTML(c *gin.Context) {
 	}
 
 	links := map[string][]*models.Link{}
-	err := baseRequest(url, &links)
+	err = baseRequest(url, &links)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, fmt.Errorf("Error while doing API request: %s", err.Error()))
 		return
@@ -74,6 +103,10 @@ func GetLinksHTML(c *gin.Context) {
 	if !exists {
 		c.JSON(http.StatusInternalServerError, fmt.Errorf("No 'reponse' field in API response"))
 		return
+	}
+
+	if limit >= 0 {
+		res = res[:limit]
 	}
 
 	html, err := getLinksiFrame(res, theme)
