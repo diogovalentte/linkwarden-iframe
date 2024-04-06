@@ -56,4 +56,4 @@ go run main.go
 3. Add the API URL, like `http://192.168.1.15:8080/v1/links/iframe?collectionId=1&limit=3&theme=dark`. Change the query arguments for your needs.
 
 # Obs:
-- Anyone who can access the API will be able to **see** all information about your links, including their collections and tags. You can add an authentication portal like [Authelia](https://github.com/authelia/authelia) or [Authentik}(https://github.com/goauthentik/authentik) in front of the API to secure it, this is how I do it.
+- Anyone who can access the API will be able to **see** all information about your links, including their collections and tags. You can add an authentication portal like [Authelia](https://github.com/authelia/authelia) or [Authentik](https://github.com/goauthentik/authentik) in front of the API to secure it, this is how I do it.
