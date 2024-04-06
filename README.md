@@ -1,8 +1,11 @@
 # Linkwarden iFrame
 
-A very simple and limited API that gets your links from your [Linkwarden](https://github.com/linkwarden/linkwarden) instance and creates a nice HTML code to be used in a iFrame (designed to be used in [Homarr](https://github.com/ajnart/homarr))
+A very simple and limited API that gets your links from your [Linkwarden](https://github.com/linkwarden/linkwarden) instance and creates a nice HTML code to be used in an iFrame (designed to be used in [Homarr](https://github.com/ajnart/homarr))
 
 This is how the iFrame is shown on the dashboard (on the right in the image below). It is made based on the Homarr app to show movies/show requests on Jellyseer/Overseer (on the left):
+
+![image](https://github.com/diogovalentte/linkwarden-iframe/assets/49578155/5dc10452-e20e-402a-9d43-6fe47e02423b)
+
 
 # How to run:
 
