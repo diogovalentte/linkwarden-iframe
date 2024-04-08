@@ -1,3 +1,5 @@
+# 2024-04-08: Moved to the project [Homarr iFrames](https://github.com/diogovalentte/homarr-iframes)
+
 # Linkwarden iFrame
 
 A very simple and limited API that gets your links from your [Linkwarden](https://github.com/linkwarden/linkwarden) instance and creates a nice HTML code to be used in an iFrame (designed to be used in [Homarr](https://github.com/ajnart/homarr))
